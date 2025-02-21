@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-around align-items-center gap-2">
+    @if(parent == 'card'){
+        <a [routerLink]="['/user', _id]" class="btn btn-outline-primary btn-sm d-flex align-items-center">
+            <i class="bi bi-search me-1"></i>
+            Ver detalle
+        </a>
+    }@else if(parent == 'view'){
+        <a [routerLink]="['/home']" class="btn btn-outline-secondary btn-sm d-flex align-items-center">
+            <i class="bi bi-arrow-left-circle me-1"></i>
+            Volver al listado
+        </a>
+    }
+    <a [routerLink]="['/updateuser',_id]" class="btn btn-outline-warning btn-sm d-flex align-items-center">
+        <i class="bi bi-gear me-1"></i>
+        Actualizar
+    </a>
+    <button class="btn btn-outline-danger btn-sm d-flex align-items-center" (click)="borrarUsuario(_id)">
+        <i class="bi bi-trash3 me-1"></i>
+        Borrar
+    </button>
+</div>

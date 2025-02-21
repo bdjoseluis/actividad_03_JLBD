@@ -1,0 +1,69 @@
+<div class="container mt-4">
+  <div class="card shadow p-4">
+    <h2 class="text-center">
+      <h3>{{ tipo }} Usuario</h3>
+    </h2>
+    <hr>
+    <form class="card shadow p-4" [formGroup]="usuarioForm" (ngSubmit)="getDataForm()">
+      <div class="row g-3">
+        <div class="col-12 col-md-6">
+          <label for="first_name" class="form-label">Nombre</label>
+          <input
+            id="first_name"
+            type="text"
+            class="form-control"
+            formControlName="first_name"
+            placeholder="Nombre del usuario"
+          />
+        </div>
+        <div class="col-12">
+          <label for="last_name" class="form-label">Apellido</label>
+          <input
+            id="last_name"
+            type="text"
+            class="form-control"
+            formControlName="last_name"
+            placeholder="Apellido del usuario"
+          />
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="username" class="form-label">Nombre de usuario</label>
+          <input
+            id="username"
+            type="text"
+            class="form-control"
+            formControlName="username"
+            placeholder="Nombre de usuario"
+          />
+        </div>
+        <div class="col-12 col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input
+            id="email"
+            type="email"
+            class="form-control"
+            formControlName="email"
+            placeholder="Correo electrónico"
+          />
+        </div>
+        <div class="col-12">
+          <label for="image" class="form-label">Imagen</label>
+          <input
+            id="image"
+            type="text"
+            class="form-control"
+            formControlName="image"
+            placeholder="URL de la imagen"
+          />
+        </div>
+      </div>
+      <hr>
+      <div class="d-flex justify-content-end gap-3">
+        <button type="submit" class="btn btn-primary" [disabled]="usuarioForm.invalid">
+          <h3>{{ tipo }} Usuario</h3>
+        </button>
+        <a [routerLink]="['/home']" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<section class="container mt-4">
+    <div class="text-center">
+        <h2 class="fw-bold mb-3">Nuestros Usuarios</h2>
+        <hr class="mb-4">
+    </div>
+
+    <div class="row g-4">
+        @for(usuario of arrUsuarios | paginate: {itemsPerPage:6, currentPage:p }; track usuario.id) {
+            <div class="col-12 col-md-6 col-lg-4">
+                <app-usuario-card [miUsuario]="usuario"></app-usuario-card>
+            </div>
+        }
+        @empty {
+            <p class="text-center text-muted">No existen usuarios</p>
+        }
+    </div>
+
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</section>
